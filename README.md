@@ -44,8 +44,6 @@ VLC does not report to Windows media controls, so the widget talks to VLC throug
 6. Click **Save**, then close VLC completely and open it again.
 7. To check it, open `http://127.0.0.1:8080` in your browser. Leave the user name empty and type the password. If you see the VLC web page, it works. You do not play files from the browser: keep using the VLC player, and the widget connects by itself in the background.
 
-### Custom logo
-Put `logo.png` and `logo.ico` next to `sound_widget_overlay.py` and run `build_exe.bat`. The exe icon, tray icon and window icon will use your logo.
 
 ### Notes
 - Sound waves follow the loudness of the system output (a peak meter), not a frequency spectrum.
@@ -97,8 +95,6 @@ VLC لا يعلن عن نفسه لأدوات الوسائط في ويندوز، 
 6. اضغط **حفظ**، ثم أغلق VLC نهائياً وافتحه من جديد.
 7. للتأكد افتح `http://127.0.0.1:8080` في المتصفح، واترك اسم المستخدم فارغاً واكتب كلمة السر. إن ظهرت صفحة VLC فقد اشتغل. لا تشغّل ملفاتك من المتصفح: استمر باستخدام مشغّل VLC كالمعتاد، والكبسولة تتصل به وحدها في الخلفية.
 
-### شعار مخصص
-ضع `logo.png` و`logo.ico` بجانب `sound_widget_overlay.py` ثم شغّل `build_exe.bat`. سيظهر شعارك على ملف exe وأيقونة شريط المهام والنافذة.
 
 ### ملاحظات
 - موجات الصوت تتبع شدة صوت النظام (قياس الذروة) وليست تحليل ترددات.
