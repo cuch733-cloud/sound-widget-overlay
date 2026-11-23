@@ -14,6 +14,7 @@ A floating glass "dynamic island" for Windows that controls media and volume.
 - Play / Pause, Previous / Next, **Shuffle**, **Repeat** (off / all / one), seek bar with elapsed and total time.
 - Volume icon (3 levels) with a horizontal slider. The mouse wheel changes the volume.
 - Hold **Next** for a silent fast-forward (x2, then x3 after 4 seconds). Sound returns when you release.
+- **Water reminder**: a drawn water bottle on the expanded widget. Each click adds one level (8 clicks = full). Every 150 minutes (changeable in Settings) you get a notification and/or the notch flashes 4 times. The count resets daily.
 - Drag anywhere (it snaps to the screen edge), size from Settings, tray icon, start with Windows, English / Arabic.
 
 ### Run
@@ -44,12 +45,18 @@ VLC does not report to Windows media controls, so the widget talks to VLC throug
 6. Click **Save**, then close VLC completely and open it again.
 7. To check it, open `http://127.0.0.1:8080` in your browser. Leave the user name empty and type the password. If you see the VLC web page, it works. You do not play files from the browser: keep using the VLC player, and the widget connects by itself in the background.
 
+### Custom logo
+Put `logo.png` and `logo.ico` next to `sound_widget_overlay.py` and run `build_exe.bat`. The exe icon, tray icon and window icon will use your logo.
 
 ### Notes
+- **Ctrl + Alt + W** shows or hides the widget, even if the tray icon is hidden by Windows (check the `^` overflow arrow in the taskbar).
 - Sound waves follow the loudness of the system output (a peak meter), not a frequency spectrum.
 - The live glass hides the widget from screenshots and screen sharing. To take a screenshot of it, right-click it and tick **Screenshot mode**.
 - Windows only (it uses Windows media controls and Core Audio).
 - Some antivirus tools flag PyInstaller executables by mistake. Building from source avoids that.
+
+### Disclaimer
+This app only remote-controls media players you already use (Windows media controls, MPC-HC, VLC). It does not play, download, record, copy, convert or share any content, and it does not bypass any protection. The author does not endorse or encourage its use with music or other content containing obscene, hateful or offensive language; what you play is your own choice and responsibility. You are responsible for using music, videos and services lawfully and according to their licenses and terms. The software is provided "as is", without warranty (MIT). The water reminder is a simple helper.
 
 ### License
 MIT
@@ -65,6 +72,7 @@ MIT
 - تشغيل وإيقاف، السابق والتالي، **الخلط**، **التكرار** (إيقاف / الكل / ملف واحد)، وشريط تقدم مع الوقت المنقضي والمدة الكلية.
 - أيقونة صوت بثلاث درجات مع شريط أفقي، وعجلة الماوس تغيّر الصوت.
 - الضغط المطوّل على **التالي** يقدّم الوقت بصمت (×2 ثم ×3 بعد 4 ثوانٍ)، ويعود الصوت عند الإفلات.
+- **تذكير شرب الماء**: قارورة مرسومة على الكبسولة الموسّعة، كل ضغطة تزيد مستوى الماء (8 ضغطات = ممتلئة). كل 150 دقيقة (تُغيَّر من الإعدادات) يصلك إشعار و/أو يومض النوتش 4 مرات. يُصفَّر العدّاد يومياً.
 - تُسحب لأي مكان وتلتصق بحافة الشاشة، والحجم من الإعدادات، وأيقونة في شريط المهام، وتشغيل مع ويندوز، وعربي / إنجليزي.
 
 ### التشغيل
@@ -95,12 +103,18 @@ VLC لا يعلن عن نفسه لأدوات الوسائط في ويندوز، 
 6. اضغط **حفظ**، ثم أغلق VLC نهائياً وافتحه من جديد.
 7. للتأكد افتح `http://127.0.0.1:8080` في المتصفح، واترك اسم المستخدم فارغاً واكتب كلمة السر. إن ظهرت صفحة VLC فقد اشتغل. لا تشغّل ملفاتك من المتصفح: استمر باستخدام مشغّل VLC كالمعتاد، والكبسولة تتصل به وحدها في الخلفية.
 
+### شعار مخصص
+ضع `logo.png` و`logo.ico` بجانب `sound_widget_overlay.py` ثم شغّل `build_exe.bat`. سيظهر شعارك على ملف exe وأيقونة شريط المهام والنافذة.
 
 ### ملاحظات
+- **Ctrl + Alt + W** يُظهر الكبسولة أو يخفيها حتى لو أخفى ويندوز أيقونة الشريط (انظر سهم `^` في شريط المهام).
 - موجات الصوت تتبع شدة صوت النظام (قياس الذروة) وليست تحليل ترددات.
 - الزجاج الحي يخفي الكبسولة من لقطات الشاشة ومشاركة الشاشة. لالتقاط صورة لها اضغط عليها كليك يمين وفعّل **وضع لقطة الشاشة**.
 - يعمل على ويندوز فقط (يعتمد على أدوات الوسائط وCore Audio في ويندوز).
 - بعض برامج الحماية تنبّه خطأً من ملفات PyInstaller، والبناء من الكود المصدري يتجنب ذلك.
+
+### إخلاء المسؤولية
+هذا التطبيق يتحكم عن بُعد فقط بمشغّلات الوسائط التي تستخدمها أصلاً (أدوات الوسائط في ويندوز وMPC-HC وVLC). لا يشغّل ولا ينزّل ولا يسجّل ولا ينسخ ولا يحوّل ولا يشارك أي محتوى، ولا يتجاوز أي حماية. ولا يشجّع المؤلف على استخدامه مع موسيقى أو محتوى فيه ألفاظ بذيئة أو مسيئة أو تحريضية، وما تشغّله هو اختيارك ومسؤوليتك. أنت المسؤول عن استخدام الموسيقى والفيديو والخدمات بشكل قانوني ووفق تراخيصها وشروطها. البرنامج مقدَّم «كما هو» دون أي ضمان (MIT). تذكير الماء مجرد أداة مساعدة.
 
 ### الترخيص
 MIT
